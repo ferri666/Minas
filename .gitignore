@@ -1,0 +1,14 @@
+#LO TÍPICO QUE SALE SIEMPRE
+.DStorage
+*.o
+libftprintf.a
+*test*
+libft.a
+objs/
+.vscode
+*.dsYM
+a.out
+
+#ESPECIFICOS DE PROYECTO
+minas
+*.png

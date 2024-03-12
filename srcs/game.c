@@ -6,7 +6,7 @@
 /*   By: ffons-ti <ffons-ti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 12:48:45 by ffons-ti          #+#    #+#             */
-/*   Updated: 2024/02/10 15:25:46 by ffons-ti         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:38:42 by ffons-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static void	init_game(t_game *g, t_map *map)
 {
 	(*g).mlx = mlx_init();
 	(*g).stat = init_stat(map);
-	(*g).width = map->max_x * 45 + 17;
-	(*g).height = map->max_y * 45 + 20;
+	(*g).width = map->max_x * 42 + 40;
+	(*g).height = map->max_y * 42 + 40;
 	load_images(g);
 	(*g).win = mlx_new_window((*g).mlx, (*g).width, (*g).height, "MINAS");
 }
@@ -51,7 +51,7 @@ static int	mouse_hk(int button, int x, int y, t_game *g)
 	{
 		mlx_string_put((*g).mlx, (*g).win, g->width / 2 - 50,
 			g->height - 25, 0x53FF1C, "YOU WIN!!!!");
-		ft_printf("BYE-BYE!\n");
+		ft_printf("YOU WIN!!!!\n");
 	}
 	return (1);
 }

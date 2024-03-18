@@ -6,7 +6,7 @@
 /*   By: ffons-ti <ffons-ti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 12:48:45 by ffons-ti          #+#    #+#             */
-/*   Updated: 2024/03/12 12:38:42 by ffons-ti         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:44:43 by ffons-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	init_game(t_game *g, t_map *map)
 
 static int	mouse_hk(int button, int x, int y, t_game *g)
 {
-	if (button == 1 || button == 2)
+	if ((button == 1 || button == 2) && y > 10)
 		change_stat(g, (x - 25) / 40, (y - 15) / 40, button);
 	mlx_clear_window((*g).mlx, (*g).win);
 	draw_something(g);
@@ -62,7 +62,7 @@ static int	render(t_game *g)
 
 	if (is_it_solved(g))
 	{
-		count = 424242424;
+		count = 1424242424;
 		while (count)
 			count--;
 		mlx_destroy_window(g->mlx, g->win);
